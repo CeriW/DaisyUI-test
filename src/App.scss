@@ -1,3 +1,7 @@
+// IMPORTANT: You MUST keep this import for DaisyUI to work!
+// DaisyUI is built on Tailwind CSS, so it needs Tailwind imported.
+// However, you DON'T need to use Tailwind utility classes in your JSX.
+// Use DaisyUI component classes (btn, card, table, list) + SCSS for styling.
 @import "tailwindcss";
 
 
@@ -5,8 +9,8 @@
 // Custom SCSS - Don't override DaisyUI classes!
 // ============================================
 
-$primary-color: #282439;
-$secondary-color: #534f66;
+$my-primary-color: #282439;
+$my-secondary-color: #534f66;
 
 // IMPORTANT: Don't override .btn or .card directly!
 // Instead, create custom classes or enhance DaisyUI styles carefully
@@ -14,36 +18,81 @@ $secondary-color: #534f66;
 // Option 1: Create custom button classes (recommended)
 // Use DaisyUI's btn class in JSX, then add custom styles here
 
-.ceri-button {
+.my-button {
     padding: 10px 20px;
     transition: all 0.3s ease;
     border-radius: 5px;
     border: none;
-    box-shadow: none;
+    box-shadow: none
 }
 
-.ceri-button-primary {
-    background-color: $primary-color;
+.my-button-primary {
+    background-color: $my-primary-color;
     color: white;
 
     &:hover {
-        background-color: color-mix(in srgb, $primary-color 80%, black 20%);
+        background-color: color-mix(in srgb, $my-primary-color 80%, black 20%);
     }
 }
 
-.ceri-button-secondary {
-    background-color: $secondary-color;
+.my-button-secondary {
+    background-color: $my-secondary-color;
     color: white;
 
     &:hover {
-        background-color: color-mix(in srgb, $secondary-color 80%, black 20%);
+        background-color: color-mix(in srgb, $my-secondary-color 80%, black 20%);
     }
 }
 
-.ceri-card {
+.my-card {
     max-width: 300px;
-    border: 1px solid $secondary-color;
+    border: 1px solid $my-secondary-color;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Table wrapper styles
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+// List styles
+.my-list {
+    background-color: hsl(var(--b1)); // Use DaisyUI theme variable
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.my-list-header {
+    padding: 1rem 1rem 0.5rem 1rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    letter-spacing: 0.025em;
+}
+
+.my-list-number {
+    font-size: 2.25rem;
+    font-weight: 100;
+    opacity: 0.3;
+    font-variant-numeric: tabular-nums;
+}
+
+.my-list-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+.my-list-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.my-list-icon {
+    width: 1.2em;
+    height: 1.2em;
 }
