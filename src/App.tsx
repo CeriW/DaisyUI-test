@@ -108,9 +108,9 @@ function App() {
   return (
     <>
       <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
-        <button className="btn btn-primary my-button my-button-primary">Primary button</button>
-        <button className="btn btn-secondary my-button my-button-secondary">Secondary button</button>
-        <button className="btn btn-accent my-button">Accent button</button>
+        <button className="btn btn-primary my-button my-button-primary">Customised primary button</button>
+        <button className="btn btn-secondary my-button my-button-secondary">Customised secondary button</button>
+        <button className="btn btn-accent my-button">Customised accent button</button>
       </div>
       <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
         <button className="btn btn-neutral">Neutral</button>
