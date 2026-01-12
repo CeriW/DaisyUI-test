@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.scss'
 
 const Card = () => {
@@ -107,11 +108,9 @@ function App() {
 
   return (
     <>
-      <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
-        <button className="btn btn-primary my-button my-button-primary">Customised primary button</button>
-        <button className="btn btn-secondary my-button my-button-secondary">Customised secondary button</button>
-        <button className="btn btn-accent my-button">Customised accent button</button>
-      </div>
+      <h1>DaisyUI experimentation</h1>
+      <br />
+      <h2>Standard DaisyUI buttons with no additional styling - this is how they come as standard</h2>
       <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
         <button className="btn btn-neutral">Neutral</button>
         <button className="btn btn-primary">Primary</button>
@@ -123,13 +122,34 @@ function App() {
         <button className="btn btn-error">Error</button>
       </div>
 
+      <br /><br /><br />
+
+      <h2>Customised DaisyUI buttons incorporating the default styles plus some I've overridden or added with SCSS</h2>
+      <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
+        <button className="btn btn-primary my-button my-button-primary">Customised primary button</button>
+        <button className="btn btn-secondary my-button my-button-secondary">Customised secondary button</button>
+        <button className="btn btn-accent my-button">Customised accent button</button>
+      </div>
+      
+
+      <br /><br /><br />
+
+
       <div style={{padding: '20px 0', display: 'flex', gap: '20px'}}>
         <Card />
         <Card />
         <Card />
       </div>
 
+      <br /><br /><br />
+
       <Table />
+
+      <br /><br /><br />
+      <h2>List component</h2>
+      <p>The list component as it came from the DaisyUI website seems to rely more heavily on Tailwind
+        classes than the other components I've used, which means when you remove the Tailwind classes it doesn't look like the website.
+        I had to get Cursor to translate the Tailwind classes into SCSS. Not a massive problem but something to be aware of - some components come with more "out of the box" styling than others.</p>
       <List />
 
     </>
