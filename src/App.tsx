@@ -26,22 +26,25 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div style={{ marginBottom: '20px' }}>
+      <div className="button-container">
         <button className="btn btn-primary ceri-button ceri-button-primary">Primary button</button>
         <button className="btn btn-secondary ceri-button ceri-button-secondary">Secondary button</button>
       </div>
 
-      <div className="card">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Card Title</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
+      <div style={{padding: '20px 0'}}>
+
+        <div className="card ceri-card">
+          <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Card Title</h2>
+            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+            <div className="card-actions">
+              <button className="btn btn-primary ceri-button ceri-button-primary">Buy Now</button>
+            </div>
           </div>
         </div>
       </div>

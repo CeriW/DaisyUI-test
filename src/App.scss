@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 // ============================================
 // Custom SCSS - Don't override DaisyUI classes!
 // ============================================
@@ -17,6 +18,7 @@ $secondary-color: #534f66;
     padding: 10px 20px;
     transition: all 0.3s ease;
     border-radius: 5px;
+    border: none;
 }
 
 .ceri-button-primary {
@@ -37,6 +39,14 @@ $secondary-color: #534f66;
     &:hover {
         background-color: darken($secondary-color, 10%);
     }
+}
+
+.ceri-card {
+    max-width: 300px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // Option 2: If you MUST override, use !important (not recommended)
