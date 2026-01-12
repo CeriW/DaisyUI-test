@@ -12,19 +12,35 @@
 $my-primary-color: #282439;
 $my-secondary-color: #534f66;
 
+@mixin my-box-shadow {
+    box-shadow: 5px 5px 0 var(--color-base-200);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 10px 10px 0 var(--color-base-200);
+    }
+
+}
+
 // IMPORTANT: Don't override .btn or .card directly!
 // Instead, create custom classes or enhance DaisyUI styles carefully
 
 // Option 1: Create custom button classes (recommended)
 // Use DaisyUI's btn class in JSX, then add custom styles here
 
-.my-button {
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    border: none;
-    box-shadow: none
+// .my-button {
+//     padding: 10px 20px;
+//     transition: all 0.3s ease;
+//     border-radius: 5px;
+//     border: none;
+//     box-shadow: none
+// }
+
+
+.my-button{
+    @include my-box-shadow;
 }
+
 
 .my-button-primary {
     background-color: $my-primary-color;
@@ -49,18 +65,20 @@ $my-secondary-color: #534f66;
     border: 1px solid $my-secondary-color;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-// Table wrapper styles
-.table-wrapper {
-    overflow-x: auto;
+    @include my-box-shadow;
 }
 
 
 // List styles
+// The list component as it came from the DaisyUI website seems to rely more heavily on Tailwind
+// classes than the other components I've used. Because of that it appears to need more custom
+// CSS just to look like it does on the website. Probably not a problem for our use case but
+// it's something to be aware of.
+
 .my-list {
-    background-color: hsl(var(--b1)); // Use DaisyUI theme variable
+    // Use DaisyUI theme variable - new Tailwind v4 format
+    // --color-base-100 is defined in your theme (index.css)
+    background-color: var(--color-base-100);
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
