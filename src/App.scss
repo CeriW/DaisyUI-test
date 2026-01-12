@@ -1,39 +1,47 @@
 @import "tailwindcss";
 
-// You can now use SCSS features like variables, nesting, mixins, etc.
-// Example:
-// $primary-color: #646cff;
-// 
-// .card {
-//   background-color: $primary-color;
-//   
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// }
+// ============================================
+// Custom SCSS - Don't override DaisyUI classes!
+// ============================================
 
 $primary-color: #282439;
-$secondary-color:#534f66;
+$secondary-color: #534f66;
 
-.btn{
+// IMPORTANT: Don't override .btn or .card directly!
+// Instead, create custom classes or enhance DaisyUI styles carefully
+
+// Option 1: Create custom button classes (recommended)
+// Use DaisyUI's btn class in JSX, then add custom styles here
+
+.ceri-button {
     padding: 10px 20px;
     transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 10px;
+    border-radius: 5px;
+}
 
+.ceri-button-primary {
+    // Custom styles - use with className="btn my-custom-btn" in JSX
     background-color: $primary-color;
     color: white;
-    border-radius: 5px;
 
-    &:hover{
+    &:hover {
         background-color: darken($primary-color, 10%);
     }
 }
 
-.btn-secondary{
+.ceri-button-secondary {
+    // Custom styles - use with className="btn my-custom-btn-secondary" in JSX
     background-color: $secondary-color;
+    color: white;
 
-    &:hover{
+    &:hover {
         background-color: darken($secondary-color, 10%);
     }
 }
+
+// Option 2: If you MUST override, use !important (not recommended)
+// But better to use DaisyUI's theme system instead (see tailwind.config.js)
+
+// Don't override .card - it breaks DaisyUI's card component!
+// If you need custom card width, use Tailwind classes in JSX instead:
+// <div className="card max-w-xs"> or <div className="card w-96">
