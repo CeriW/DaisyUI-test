@@ -19,25 +19,24 @@ $secondary-color: #534f66;
     transition: all 0.3s ease;
     border-radius: 5px;
     border: none;
+    box-shadow: none;
 }
 
 .ceri-button-primary {
-    // Custom styles - use with className="btn my-custom-btn" in JSX
     background-color: $primary-color;
     color: white;
 
     &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: color-mix(in srgb, $primary-color 80%, black 20%);
     }
 }
 
 .ceri-button-secondary {
-    // Custom styles - use with className="btn my-custom-btn-secondary" in JSX
     background-color: $secondary-color;
     color: white;
 
     &:hover {
-        background-color: darken($secondary-color, 10%);
+        background-color: color-mix(in srgb, $secondary-color 80%, black 20%);
     }
 }
 
@@ -48,10 +47,3 @@ $secondary-color: #534f66;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-// Option 2: If you MUST override, use !important (not recommended)
-// But better to use DaisyUI's theme system instead (see tailwind.config.js)
-
-// Don't override .card - it breaks DaisyUI's card component!
-// If you need custom card width, use Tailwind classes in JSX instead:
-// <div className="card max-w-xs"> or <div className="card w-96">
